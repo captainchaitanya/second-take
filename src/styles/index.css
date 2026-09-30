@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+@theme {
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-display);
+  --color-page: var(--bg-page);
+  --color-app: var(--bg-app);
+  --color-elevated: var(--bg-elevated);
+  --color-card: var(--bg-card);
+  --color-ink: var(--ink);
+  --color-muted: var(--ink-muted);
+  --color-soft: var(--ink-soft);
+  --color-accent: var(--accent);
+  --color-mint: var(--mint);
+  --color-amber: var(--amber);
+  --color-rose: var(--rose);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: var(--bg-page);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.page-glows {
+  background-color: var(--bg-page);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 18% 18%, var(--glow-violet), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 88% 12%, var(--glow-coral), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 70% 90%, var(--glow-mint), transparent 62%);
+}
+
+.phone-bezel {
+  box-shadow:
+    0 40px 80px rgba(3, 1, 10, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.phone-screen,
+.phone-screen * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.phone-screen::-webkit-scrollbar,
+.phone-screen *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(246, 239, 230, 0.16) transparent;
+}
+
+html::-webkit-scrollbar,
+.soft-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track,
+.soft-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: rgba(246, 239, 230, 0.16);
+  border-radius: 99px;
+}
+
+.soft-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(246, 239, 230, 0.16) transparent;
+}
+
+.choice-card:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice-card:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "id": "safe-job",
+  "title": "Turning down the safe job",
+  "category": "Family",
+  "situation": "You have a stable bank job offer, and your parents have already told relatives. You want to turn it down for a lower-paying startup role in Bengaluru. It's after dinner, and your father has just asked about the joining date.",
+  "goal": "Tell him your decision, and leave him worried but not hurt.",
+  "durationMin": 3,
+  "partner": {
+    "name": "Papa",
+    "age": 54,
+    "role": "government employee",
+    "oneLine": "Proud, practical, protective.",
+    "hiddenWant": "Reassurance. His nephew Pinku's startup failed badly, and he watched that family struggle. He's proud of you but rarely says it.",
+    "softensWhen": [
+      "You thank him first",
+      "You show a real plan",
+      "You ask what worries him"
+    ],
+    "digsInWhen": [
+      "You say he doesn't understand",
+      "You call his thinking outdated",
+      "You sound like you haven't planned"
+    ]
+  },
+  "difficulty": "medium",
+  "rubric": [
+    {
+      "id": "respect",
+      "name": "Showed respect",
+      "description": "Credited his support and view",
+      "tip": "Start with what his support made possible, before the news."
+    },
+    {
+      "id": "plan",
+      "name": "Showed a real plan",
+      "description": "Gave numbers and a fallback",
+      "tip": "Have three numbers ready: savings, pay difference, and a date to reassess."
+    },
+    {
+      "id": "listen",
+      "name": "Listened to the worry",
+      "description": "Asked about his fear",
+      "tip": "Ask \"What worries you most?\" and let him answer fully."
+    },
+    {
+      "id": "clarity",
+      "name": "Stayed clear on the decision",
+      "description": "Said it as a decision, warmly",
+      "tip": "State it as a decision, not a question, while staying warm."
+    }
+  ],
+  "turns": [
+    {
+      "partnerLine": {
+        "guarded": "Offer letter came? When's the joining date?",
+        "neutral": "So the offer letter came? Good, good. When's the joining date? Your mother wants to call your Mausi.",
+        "open": "So the offer letter came! Very good. When's the joining date? Your mother wants to call your Mausi."
+      },
+      "choices": [
+        {
+          "id": "t1-a",
+          "text": "It came, Papa. Before we tell anyone, can I talk to you about it? I've been thinking a lot, and I want your view.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Talk about what? It's a good offer.",
+          "coachNote": "Asking for his view before the news makes him a partner, not an opponent.",
+          "skills": { "respect": 1, "plan": 0, "listen": 0, "clarity": 0 }
+        },
+        {
+          "id": "t1-b",
+          "text": "Actually, Papa, don't tell Mausi yet. I might not take it.",
+          "quality": "subtle",
+          "moodDelta": -1,
+          "reaction": "Might not take it? What does that mean?",
+          "coachNote": "Honest, but it lands as a surprise and starts with a \"don't.\"",
+          "betterLine": "It came, Papa. Before we tell anyone, can I talk to you about it?",
+          "skills": { "respect": -1, "plan": 0, "listen": 0, "clarity": 0 }
+        },
+        {
+          "id": "t1-c",
+          "text": "Papa, I'm not joining the bank. I've already accepted the startup offer.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Already? Without even asking us?",
+          "coachNote": "Opening with a done deal skips him entirely. The decision may be right, but the order hurts.",
+          "betterLine": "It came, Papa. Before we tell anyone, I want your view on something.",
+          "skills": { "respect": -1, "plan": 0, "listen": -1, "clarity": 0 }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "What is there to discuss? A bank job is a bank job. Security for life.",
+        "neutral": "What is there to think about? It's a bank. Stable. Sharma uncle's son joined SBI, and look at him now.",
+        "open": "Okay, tell me. But a bank job is a good thing, beta. Sharma uncle's son joined SBI. Look at him now."
+      },
+      "choices": [
+        {
+          "id": "t2-a",
+          "text": "It is a good offer, and I know I have it because of everything you and Mummy did. But I got another offer, from a startup in Bengaluru, and I want to take it.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "A startup? Beta...",
+          "coachNote": "You gave credit first and stated the decision plainly, so it sounds considered, not rebellious.",
+          "skills": { "respect": 1, "plan": 0, "listen": 0, "clarity": 1 },
+          "trigger": { "type": "soften", "label": "You thank him first" }
+        },
+        {
+          "id": "t2-b",
+          "text": "I know, but I don't want to be Sharma uncle's son. I want something more exciting.",
+          "quality": "subtle",
+          "moodDelta": -1,
+          "reaction": "Exciting doesn't pay rent, beta.",
+          "coachNote": "Wanting more is fair, but \"exciting\" sounds like a whim to someone who values security.",
+          "betterLine": "It's a good offer, and I have it because of you. But I want to take a startup role in Bengaluru.",
+          "skills": { "respect": 0, "plan": -1, "listen": 0, "clarity": 0 },
+          "trigger": { "type": "digIn", "label": "You sound like you haven't planned" }
+        },
+        {
+          "id": "t2-c",
+          "text": "Papa, that's such an old way of thinking. Nobody cares about bank jobs anymore.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Old way of thinking. Okay. This old way of thinking paid for your college.",
+          "coachNote": "It dismisses his whole life's logic, so now he's defending himself instead of listening.",
+          "betterLine": "It is a good offer, and I have it because of you. But I want to take a different one.",
+          "skills": { "respect": -1, "plan": 0, "listen": 0, "clarity": 0 },
+          "trigger": { "type": "digIn", "label": "You call his thinking outdated" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "And when it shuts down in a year? Then what? You'll come back home?",
+        "neutral": "These startups shut down overnight, beta. And the pay is less, na?",
+        "open": "I'm just worried, beta. These startups close overnight. And the pay is less?"
+      },
+      "choices": [
+        {
+          "id": "t3-a",
+          "text": "It's about 20% less. I've saved enough for six months, they're funded for two years, and if it's not working in a year, I'll apply to banks again.",
+          "quality": "strong",
+          "moodDelta": 2,
+          "reaction": "You've... actually worked this out.",
+          "coachNote": "Numbers and a fallback turn his fear into something he can check, which is what he needed.",
+          "skills": { "respect": 0, "plan": 1, "listen": 0, "clarity": 1 },
+          "trigger": { "type": "soften", "label": "You show a real plan" }
+        },
+        {
+          "id": "t3-b",
+          "text": "It'll be fine, Papa. Don't worry so much.",
+          "quality": "subtle",
+          "moodDelta": -1,
+          "reaction": "Telling me not to worry doesn't make me worry less.",
+          "coachNote": "Reassurance without details sounds like you haven't thought about the risk.",
+          "betterLine": "It's about 20% less. I've saved six months, and I'll reassess in a year.",
+          "skills": { "respect": 0, "plan": -1, "listen": -1, "clarity": 0 },
+          "trigger": { "type": "digIn", "label": "You sound like you haven't planned" }
+        },
+        {
+          "id": "t3-c",
+          "text": "You just don't understand how the industry works now.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Then explain it. Don't just tell me I don't understand.",
+          "coachNote": "It shuts him out right when he's asking a real question.",
+          "betterLine": "It's about 20% less. Here's my plan: six months saved, and I'll reassess in a year.",
+          "skills": { "respect": -1, "plan": -1, "listen": 0, "clarity": 0 },
+          "trigger": { "type": "digIn", "label": "You say he doesn't understand" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Do what you want. You've decided anyway.",
+        "neutral": "Hmm. I still don't like it. What will I tell people?",
+        "open": "Hmm. I still don't fully like it. But okay. What do we tell your Mausi?"
+      },
+      "choices": [
+        {
+          "id": "t4-a",
+          "text": "I know this is hard. What worries you most about it? I'd rather hear it from you than guess.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "...Pinku. I saw what happened to Pinku's family. I don't want that for you.",
+          "coachNote": "One open question reached the real fear, which no amount of numbers would have.",
+          "skills": { "respect": 0, "plan": 0, "listen": 1, "clarity": 0 },
+          "trigger": { "type": "soften", "label": "You ask what worries him" }
+        },
+        {
+          "id": "t4-b",
+          "text": "Just tell them I'm working at a tech company in Bengaluru. That's it.",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "Hmm. Fine.",
+          "coachNote": "Practical, but it answers the surface question and skips the worry underneath.",
+          "betterLine": "I know this is hard. What worries you most about it?",
+          "skills": { "respect": 0, "plan": 0, "listen": -1, "clarity": 0 }
+        },
+        {
+          "id": "t4-c",
+          "text": "Honestly, Papa, why do you care so much what relatives think?",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Because they're our family. Forget it. Do what you want.",
+          "coachNote": "Questioning his values at the end reopens the fight you'd almost settled.",
+          "betterLine": "I know this is hard. What worries you most?",
+          "skills": { "respect": -1, "plan": 0, "listen": -1, "clarity": 0 },
+          "trigger": { "type": "digIn", "label": "You call his thinking outdated" }
+        }
+      ]
+    }
+  ],
+  "endings": {
+    "guarded": "Do what you want. I'm going to sleep.",
+    "neutral": "Okay. Send me the offer letter. I want to read it myself.",
+    "open": "Okay. I'll tell your mother. And beta... send me the company's name. I want to read about it."
+  }
+}

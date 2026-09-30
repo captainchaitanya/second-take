@@ -1,0 +1,221 @@
+{
+  "id": "raise-conversation",
+  "title": "The raise conversation",
+  "category": "Work",
+  "situation": "You've been at the company a year. When your teammate Priya left, you took over her reporting work and still shipped the billing migration. Your pay hasn't changed. You booked 20 minutes with your manager.",
+  "goal": "Ask for a specific raise and leave with a clear next step, not a \"we'll see.\"",
+  "durationMin": 3,
+  "partner": {
+    "name": "Marcus Lee",
+    "age": 45,
+    "role": "Engineering Director",
+    "oneLine": "Fair, blunt, careful with budget.",
+    "hiddenWant": "To keep you. He has a small budget for exceptions, but he needs strong evidence to argue your case with HR.",
+    "softensWhen": [
+      "You bring specific numbers",
+      "You name a clear figure",
+      "You're flexible on timing"
+    ],
+    "digsInWhen": [
+      "You're vague about why",
+      "You use another offer as a threat",
+      "You apologise for asking"
+    ]
+  },
+  "difficulty": "medium",
+  "rubric": [
+    {
+      "id": "evidence",
+      "name": "Backed it with impact",
+      "description": "Gave concrete results, not effort",
+      "tip": "Lead with one result he can repeat to someone else, with a number in it."
+    },
+    {
+      "id": "ask",
+      "name": "Named a clear ask",
+      "description": "Said a specific figure",
+      "tip": "Say the number out loud, early. A range invites the bottom of it."
+    },
+    {
+      "id": "confidence",
+      "name": "Asked without apologising",
+      "description": "No hedging, threats or self-shrinking",
+      "tip": "Drop \"sorry\" and \"I know it's a bad time.\" Just say why you're here."
+    },
+    {
+      "id": "nextstep",
+      "name": "Left with a next step",
+      "description": "Ended with a task and a date",
+      "tip": "Before you leave, ask what he needs from you and by when."
+    }
+  ],
+  "turns": [
+    {
+      "partnerLine": {
+        "guarded": "Sure. I've got about ten minutes, actually. What's up?",
+        "neutral": "Sure, I've got twenty minutes. What's up?",
+        "open": "Hey, good timing. What's on your mind?"
+      },
+      "choices": [
+        {
+          "id": "t1-a",
+          "text": "I want to talk about my pay. This year I took on Priya's work and shipped the billing migration, and I think my salary should reflect that.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Okay. That's fair to bring up. Walk me through it.",
+          "coachNote": "You named the topic and the reason in one breath, with no apology.",
+          "skills": { "evidence": 1, "ask": 0, "confidence": 1, "nextstep": 0 }
+        },
+        {
+          "id": "t1-b",
+          "text": "So, um, this might be awkward, but is there any room to revisit my compensation at some point?",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "At some point? Sure, I guess. What are you thinking?",
+          "coachNote": "Polite, but \"might be awkward\" and \"at some point\" tell him this can wait.",
+          "betterLine": "I'd like to talk about my pay. My role has grown a lot this year.",
+          "skills": { "evidence": 0, "ask": -1, "confidence": -1, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You apologise for asking" }
+        },
+        {
+          "id": "t1-c",
+          "text": "A recruiter reached out with a much better offer, so I think we need to talk about my salary.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Oh. Okay. Are you planning to leave?",
+          "coachNote": "Opening with another offer turns a raise talk into a retention scare. Now he's defending, not listening.",
+          "betterLine": "I want to talk about my pay. This year I took on Priya's work and shipped the billing migration.",
+          "skills": { "evidence": -1, "ask": 0, "confidence": -1, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You use another offer as a threat" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Look, before we go further, is this about another offer? Because that changes things.",
+        "neutral": "Okay. Walk me through it. What's changed in your role?",
+        "open": "Yeah, the migration was a big deal. Walk me through the rest."
+      },
+      "choices": [
+        {
+          "id": "t2-a",
+          "text": "When Priya left, I picked up the reporting pipeline on top of my work. The migration shipped two weeks early and cut failed payments by about 18%.",
+          "quality": "strong",
+          "moodDelta": 2,
+          "reaction": "Eighteen percent. I didn't know it was that high.",
+          "coachNote": "One concrete result with a number gives him something he can repeat to HR.",
+          "skills": { "evidence": 1, "ask": 0, "confidence": 0, "nextstep": 0 },
+          "trigger": { "type": "soften", "label": "You bring specific numbers" }
+        },
+        {
+          "id": "t2-b",
+          "text": "Honestly, I've just been working really hard. Staying late, taking on whatever comes up.",
+          "quality": "subtle",
+          "moodDelta": -1,
+          "reaction": "I know you work hard. Everyone here does, though.",
+          "coachNote": "Effort is real, but it's hard for him to argue for. Results travel further than hours.",
+          "betterLine": "I picked up the reporting pipeline, and the migration cut failed payments by about 18%.",
+          "skills": { "evidence": -1, "ask": 0, "confidence": 0, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You're vague about why" }
+        },
+        {
+          "id": "t2-c",
+          "text": "I mean, you've seen my work. I shouldn't have to spell it out.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "I'd actually like you to. That's what I'll have to do for HR.",
+          "coachNote": "It sounds confident, but it hands him the job of building your case.",
+          "betterLine": "Sure. The migration shipped two weeks early and cut failed payments by about 18%.",
+          "skills": { "evidence": -1, "ask": 0, "confidence": -1, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You're vague about why" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Alright. Even if I agree, the review cycle's in March. I can't do much before that.",
+        "neutral": "Okay, that's solid. What are you asking for, exactly?",
+        "open": "That's a strong year. So what number did you have in mind?"
+      },
+      "choices": [
+        {
+          "id": "t3-a",
+          "text": "I'm asking for a 15% raise. That brings me in line with what this role pays elsewhere, and I've got the data if it helps.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Fifteen. Okay. That's specific. I appreciate that.",
+          "coachNote": "A clear number with a reason behind it is easy for him to take upstairs.",
+          "skills": { "evidence": 0, "ask": 1, "confidence": 1, "nextstep": 0 },
+          "trigger": { "type": "soften", "label": "You name a clear figure" }
+        },
+        {
+          "id": "t3-b",
+          "text": "Whatever you think is fair, honestly. I trust you.",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "That's kind, but it doesn't really help me make the case.",
+          "coachNote": "Leaving the number to him feels generous, but he'll anchor low to stay safe on budget.",
+          "betterLine": "I'm asking for 15%. That's in line with what this role pays elsewhere.",
+          "skills": { "evidence": 0, "ask": -1, "confidence": 0, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You're vague about why" }
+        },
+        {
+          "id": "t3-c",
+          "text": "Sorry, I know budgets are tight. Maybe something small, if that's even possible?",
+          "quality": "backfire",
+          "moodDelta": -1,
+          "reaction": "Something small. Okay. I'll see what I can do.",
+          "coachNote": "You negotiated against yourself before he said a word.",
+          "betterLine": "I'm asking for 15%, and I've got the market data if it helps.",
+          "skills": { "evidence": 0, "ask": -1, "confidence": -1, "nextstep": 0 },
+          "trigger": { "type": "digIn", "label": "You apologise for asking" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "I hear you. I'm just not sure I can promise anything right now.",
+        "neutral": "I can't approve it myself, but I can take it to HR. Timing's the hard part.",
+        "open": "I think I can make a case for this. Timing's the only tricky bit."
+      },
+      "choices": [
+        {
+          "id": "t4-a",
+          "text": "That's fair. What would you need from me to make the case, and could we aim for a decision before March?",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Send me a one-pager with those numbers by Friday. I'll push for February.",
+          "coachNote": "You gave a little on timing, kept the ask, and left with a task and a date.",
+          "skills": { "evidence": 0, "ask": 0, "confidence": 1, "nextstep": 1 },
+          "trigger": { "type": "soften", "label": "You're flexible on timing" }
+        },
+        {
+          "id": "t4-b",
+          "text": "Okay, no worries. Just let me know whenever you hear something.",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "Will do.",
+          "coachNote": "Friendly, but \"whenever\" hands the timeline to a busy person. It may quietly drift.",
+          "betterLine": "What would you need from me to make the case, and by when?",
+          "skills": { "evidence": 0, "ask": 0, "confidence": 0, "nextstep": -1 }
+        },
+        {
+          "id": "t4-c",
+          "text": "If it can't happen before March, I might need to look at other options.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Then I guess you'll have to do what's right for you.",
+          "coachNote": "An ultimatum at the end undoes the case you built and puts him on the defensive.",
+          "betterLine": "That's fair. What do you need from me, and could we aim for before March?",
+          "skills": { "evidence": 0, "ask": 0, "confidence": -1, "nextstep": -1 },
+          "trigger": { "type": "digIn", "label": "You use another offer as a threat" }
+        }
+      ]
+    }
+  ],
+  "endings": {
+    "guarded": "Let me think about it. I'll get back to you.",
+    "neutral": "Send me what you've got. I'll raise it with HR and let you know.",
+    "open": "Good conversation. Get me that one-pager and I'll fight for February."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "id": "small-talk-dies",
+  "title": "When the small talk dies",
+  "category": "Social",
+  "situation": "You're at your friend Nisha's housewarming, and she's the only person you know. By the snacks, you and a stranger swapped names and jobs. Now there's a silence.",
+  "goal": "Turn this into a real conversation you'd both enjoy.",
+  "durationMin": 3,
+  "partner": {
+    "name": "Sam",
+    "age": 27,
+    "role": "UX researcher",
+    "oneLine": "Dry, curious, a bit shy.",
+    "hiddenWant": "Sam also only knows Nisha and would be relieved if someone kept talking, but won't carry the conversation alone.",
+    "softensWhen": [
+      "You ask something specific",
+      "You share something real first",
+      "You build on what they said"
+    ],
+    "digsInWhen": [
+      "It feels like an interview",
+      "You talk about yourself too long",
+      "You change the subject abruptly"
+    ]
+  },
+  "difficulty": "medium",
+  "rubric": [
+    {
+      "id": "curiosity",
+      "name": "Asked a real question",
+      "description": "Asked for stories, not facts",
+      "tip": "Swap \"what do you do\" for \"how did you end up doing it.\""
+    },
+    {
+      "id": "share",
+      "name": "Offered something of yourself",
+      "description": "Gave an honest detail first",
+      "tip": "Give a small, honest detail. People match what you offer."
+    },
+    {
+      "id": "build",
+      "name": "Built on what they said",
+      "description": "Followed their thread",
+      "tip": "Pick one word from their last answer and ask about it."
+    },
+    {
+      "id": "ease",
+      "name": "Kept it light",
+      "description": "Lowered the stakes for both",
+      "tip": "A little self-deprecating humour makes it easier for both of you."
+    }
+  ],
+  "turns": [
+    {
+      "partnerLine": {
+        "guarded": "Mm. Yeah.",
+        "neutral": "Nice. So... yeah. This dip's good.",
+        "open": "Nice. So... yeah. Honestly, this dip is the best thing here."
+      },
+      "choices": [
+        {
+          "id": "t1-a",
+          "text": "It is. I've been standing near it on purpose, because I only know Nisha. How do you know her?",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Ha, same. Only Nisha. We worked together, like, two jobs ago.",
+          "coachNote": "Admitting you only know the host is honest, and it gives them an easy way in.",
+          "skills": { "curiosity": 0, "share": 1, "build": 0, "ease": 1 },
+          "trigger": { "type": "soften", "label": "You share something real first" }
+        },
+        {
+          "id": "t1-b",
+          "text": "Yeah. So what else do you do, apart from UX research?",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "Uh, not much. Work, sleep. You?",
+          "coachNote": "It's a question, but another résumé question. It keeps things on the surface.",
+          "betterLine": "What's the strangest thing you've learned from watching people use apps?",
+          "skills": { "curiosity": 0, "share": 0, "build": -1, "ease": 0 },
+          "trigger": { "type": "digIn", "label": "It feels like an interview" }
+        },
+        {
+          "id": "t1-c",
+          "text": "Did you see the match last night? Unreal ending.",
+          "quality": "backfire",
+          "moodDelta": -1,
+          "reaction": "I, uh, don't really follow it. Sorry.",
+          "coachNote": "Jumping to something unrelated means Sam has to catch up or admit they can't.",
+          "betterLine": "I've been standing near it on purpose, because I only know Nisha. You?",
+          "skills": { "curiosity": -1, "share": 0, "build": -1, "ease": 0 },
+          "trigger": { "type": "digIn", "label": "You change the subject abruptly" }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Yeah. It's fine. The job's fine.",
+        "neutral": "UX research is basically watching people get confused by apps.",
+        "open": "My job is honestly just watching people get confused by apps and trying not to laugh."
+      },
+      "choices": [
+        {
+          "id": "t2-a",
+          "text": "Wait, that sounds great. What's the most confused you've seen someone get?",
+          "quality": "strong",
+          "moodDelta": 2,
+          "reaction": "Oh, okay. There was this guy who tried to swipe a paper form. Genuinely.",
+          "coachNote": "You picked up their exact words and asked for a story, which is easier to answer than a fact.",
+          "skills": { "curiosity": 1, "share": 0, "build": 1, "ease": 0 },
+          "trigger": { "type": "soften", "label": "You build on what they said" }
+        },
+        {
+          "id": "t2-b",
+          "text": "Oh cool, I'm in product, so I work with researchers a lot. We did like twenty interviews on my last project, and it was really interesting because...",
+          "quality": "subtle",
+          "moodDelta": -1,
+          "reaction": "Yeah. Interviews. Cool.",
+          "coachNote": "Relating is good, but you took the spotlight before they'd finished stepping into it.",
+          "betterLine": "Ha, I've done a few interviews myself. What's the most confused you've seen someone get?",
+          "skills": { "curiosity": 0, "share": 0, "build": -1, "ease": 0 },
+          "trigger": { "type": "digIn", "label": "You talk about yourself too long" }
+        },
+        {
+          "id": "t2-c",
+          "text": "Haha, so you're basically professionally judging people?",
+          "quality": "backfire",
+          "moodDelta": -1,
+          "reaction": "I mean... no. Not really.",
+          "coachNote": "Teasing a stranger's job before you know them can land as a jab, not a joke.",
+          "betterLine": "That sounds great. What's the most confused you've seen someone get?",
+          "skills": { "curiosity": 0, "share": 0, "build": 0, "ease": -1 }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Anyway. I should probably, um...",
+        "neutral": "Anyway. What about you? Why are you here if you only know Nisha?",
+        "open": "Okay, your turn. Why are you here if you only know Nisha? Be honest."
+      },
+      "choices": [
+        {
+          "id": "t3-a",
+          "text": "Honestly? I almost bailed. I'm glad I didn't, though. This beats my couch.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Ha. I almost bailed too. Twice.",
+          "coachNote": "A small, honest admission invites them to match it, and they did.",
+          "skills": { "curiosity": 0, "share": 1, "build": 0, "ease": 1 },
+          "trigger": { "type": "soften", "label": "You share something real first" }
+        },
+        {
+          "id": "t3-b",
+          "text": "Just being supportive, you know. Nisha's a good friend.",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "Yeah, she's great.",
+          "coachNote": "True, but safe. It closes the topic instead of opening one.",
+          "betterLine": "Honestly? I almost bailed. I'm glad I didn't.",
+          "skills": { "curiosity": 0, "share": -1, "build": 0, "ease": 0 }
+        },
+        {
+          "id": "t3-c",
+          "text": "Parties aren't really my thing. Most of these people seem kind of boring.",
+          "quality": "backfire",
+          "moodDelta": -2,
+          "reaction": "Oh. Well, I'm one of these people, I guess.",
+          "coachNote": "Honesty is good, but calling the room boring includes the person you're talking to.",
+          "betterLine": "Honestly? I almost bailed. This beats my couch, though.",
+          "skills": { "curiosity": 0, "share": 0, "build": 0, "ease": -1 }
+        }
+      ]
+    },
+    {
+      "partnerLine": {
+        "guarded": "Yeah. Well. I'm gonna grab a refill.",
+        "neutral": "Okay, this is nice. I'm gonna grab a refill, though. Want anything?",
+        "open": "Okay, this is the first real conversation I've had tonight. I'm grabbing a refill. Want one?"
+      },
+      "choices": [
+        {
+          "id": "t4-a",
+          "text": "Yes, please. And then you owe me the rest of the paper-form story.",
+          "quality": "strong",
+          "moodDelta": 1,
+          "reaction": "Deal. It gets worse, I promise.",
+          "coachNote": "A callback shows you were really listening, and gives them a reason to come back.",
+          "skills": { "curiosity": 0, "share": 0, "build": 1, "ease": 1 },
+          "trigger": { "type": "soften", "label": "You build on what they said" }
+        },
+        {
+          "id": "t4-b",
+          "text": "No, I'm good, thanks.",
+          "quality": "subtle",
+          "moodDelta": 0,
+          "reaction": "Okay. Nice meeting you.",
+          "coachNote": "Polite, but it lets the conversation end right as it was warming up.",
+          "betterLine": "Yes, please. And you owe me the rest of that story.",
+          "skills": { "curiosity": 0, "share": 0, "build": -1, "ease": 0 }
+        },
+        {
+          "id": "t4-c",
+          "text": "Sure. Hey, can I get your number, just in case?",
+          "quality": "backfire",
+          "moodDelta": -1,
+          "reaction": "Oh. Um, I'm on Instagram, I guess?",
+          "coachNote": "Asking for a number mid-refill skips a few steps. Let the conversation finish first.",
+          "betterLine": "Yes, please. And then you owe me the rest of that story.",
+          "skills": { "curiosity": 0, "share": 0, "build": 0, "ease": -1 }
+        }
+      ]
+    }
+  ],
+  "endings": {
+    "guarded": "Nice meeting you. Enjoy the party.",
+    "neutral": "Nice talking to you. Find me if you need rescuing from small talk.",
+    "open": "Okay, you're sitting with me when Nisha makes everyone play games. That's the rule."
+  }
+}

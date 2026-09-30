@@ -1,0 +1,41 @@
+:root {
+  --bg-page: #0c0816;
+  --bg-app: #16102a;
+  --bg-elevated: #1f1738;
+  --bg-card: rgba(255, 247, 236, 0.06);
+  --bg-card-hover: rgba(255, 247, 236, 0.1);
+  --bg-sheet: #241b42;
+  --ink: #f6efe6;
+  --ink-muted: #c9bfd9;
+  --ink-soft: #9b90b3;
+  --accent: #f3a083;
+  --accent-strong: #f8b89a;
+  --accent-deep: #d98468;
+  --mint: #7dceb8;
+  --mint-soft: rgba(125, 206, 184, 0.16);
+  --amber: #e0b56a;
+  --amber-soft: rgba(224, 181, 106, 0.16);
+  --rose: #c98b94;
+  --rose-soft: rgba(201, 139, 148, 0.16);
+  --bezel: #07050f;
+  --island: #05030a;
+  --glow-coral: rgba(243, 160, 131, 0.22);
+  --glow-violet: rgba(92, 64, 180, 0.34);
+  --glow-mint: rgba(125, 206, 184, 0.12);
+  --focus: #f3a083;
+  --shadow-card: 0 10px 30px rgba(5, 2, 16, 0.35);
+  --shadow-sheet: 0 -18px 40px rgba(5, 2, 16, 0.45);
+  --radius-lg: 24px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --font-ui: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
